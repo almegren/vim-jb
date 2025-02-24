@@ -40,7 +40,7 @@ if s:config.enable_unicode == 1
   let g:gitgutter_sign_modified_removed = '┨'
 endif
 " Remove the tilde from the end of the buffer (ending whitespace required!)
-set fillchars-=eob:\~ | set fillchars+=eob:\ 
+set fillchars-=eob:\~ | set fillchars+=eob:\
 
 
 " === FUNCTIONS =======================================================================
@@ -66,7 +66,6 @@ function! s:h(group, style)
     \ "ctermfg=" . l:ctermfg
     \ "ctermbg=" . l:ctermbg
     \ "cterm="   (has_key(a:style, "cterm")   ? a:style.cterm    : "NONE")
-    \ "ctermul=" (has_key(a:style, "ctermul") ? a:style.ctermul  : "NONE")
 endfunction
 
 
@@ -78,8 +77,8 @@ call s:h("JBHyperlink", { "fg": s:colors.link, "gui": "underline", "cterm": "und
 call s:h("JBTodo", { "fg": s:colors.todo }) " TODOs
 call s:h("JBSearchResult", { "bg": s:colors.search }) " Search results
 call s:h("JBFoldedText", { "fg": s:colors.comment, "bg": s:colors.folded }) " Folded text
-call s:h("JBError", { "gui": "underline",  "cterm": "undercurl", "sp": s:colors.err, "ctermul": "red" }) " Doesn't match JB exactly, can't do seperate color undercurls in terminal
-call s:h("JBWarning", { "gui": "undercurl", "cterm": "undercurl", "sp": s:colors.warning, "ctermul": "yellow" })
+call s:h("JBError", { "gui": "underline",  "cterm": "undercurl", "sp": s:colors.err, "cterm": "red" }) " Doesn't match JB exactly, can't do seperate color undercurls in terminal
+call s:h("JBWarning", { "gui": "undercurl", "cterm": "undercurl", "sp": s:colors.warning, "cterm": "yellow" })
 call s:h("JBCursor", { "fg": s:colors.editor, "bg": s:colors.comment }) " Cursor
 
 " Language defaults
@@ -161,7 +160,7 @@ highlight! link Debug Tag
 
 " --- Text ---
 highlight! link Cursor JBCursor
-highlight! link LineNr JBGutterLineNr 
+highlight! link LineNr JBGutterLineNr
 highlight! link CursorLineNr JBCommentRef
 highlight! link NormalNC Normal
 highlight! link Folded JBFoldedText
@@ -328,7 +327,7 @@ highlight! link rustCommentLineDoc JBDocComment
 highlight! link typescriptStorageClass Text
 highlight! link typescriptEndColons Text
 highlight! link typescriptMessage String
-highlight! link typescriptGlobalObjects Constant 
+highlight! link typescriptGlobalObjects Constant
 highlight! link typescriptBraces Text
 highlight! link typescriptParens Text
 
@@ -353,7 +352,7 @@ highlight! link vimFuncName Function
 highlight! link ktDocComment JBDocComment
 highlight! link ktDocTag JBStringRef
 highlight! link ktDocTagParam Text
-highlight! link ktAnnotation Tag 
+highlight! link ktAnnotation Tag
 highlight! link ktComplexInterpolationBrace Keyword
 highlight! link ktLabel Number
 highlight! link ktArrow Text
@@ -404,7 +403,7 @@ highlight! link FernRootSymbol String
 highlight! link FernRootText String
 highlight! link FernBranchSymbol String
 highlight! link FernBranchText ModeMsg
-highlight! link FernLeafSymbol Function 
+highlight! link FernLeafSymbol Function
 highlight! link FernGitStatusIndex DiffAdd
 highlight! link FernGitStatusWorktree DiffText
 highlight! link FernGitStatusUntracked DiffAdd
@@ -504,4 +503,4 @@ endif
 
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
-set background=dark
+set background=light
