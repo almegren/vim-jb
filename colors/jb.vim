@@ -77,8 +77,8 @@ call s:h("JBHyperlink", { "fg": s:colors.link, "gui": "underline", "cterm": "und
 call s:h("JBTodo", { "fg": s:colors.todo }) " TODOs
 call s:h("JBSearchResult", { "bg": s:colors.search }) " Search results
 call s:h("JBFoldedText", { "fg": s:colors.comment, "bg": s:colors.folded }) " Folded text
-call s:h("JBError", { "gui": "underline", "sp": s:colors.err, "cterm": "red" }) " Doesn't match JB exactly, can't do seperate color undercurls in terminal
-call s:h("JBWarning", { "gui": "undercurl", "sp": s:colors.warning, "cterm": "yellow" })
+call s:h("JBError", { "gui": "underline",  cterm": "undercurl", "sp": s:colors.err}) " Doesn't match JB exactly, can't do seperate color undercurls in terminal
+call s:h("JBWarning", { "gui": "undercurl", "cterm": "undercurl", "sp": s:colors.warning})
 call s:h("JBCursor", { "fg": s:colors.editor, "bg": s:colors.comment }) " Cursor
 
 " Language defaults
